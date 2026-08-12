@@ -36,16 +36,18 @@ need to be served over HTTP.
 
 ## Images
 
-Photography is currently hot-linked from `static.wixstatic.com` (the previous Wix site).
-These are not stored in this repo, so the images depend on that Wix account staying
-active. See the open issues below.
+All photography lives in `images/` and is served from this repo — nothing is hot-linked
+to the old Wix site. Filenames carry the first eight characters of the original Wix
+asset hash, so they are stable but not descriptive; they can be renamed to something
+readable as long as the references in the HTML are updated to match.
+
+The one remaining external image is the YouTube poster frame on `cabaret.html`, which
+is served from `i.ytimg.com` and belongs to the embedded video.
 
 ## Known issues
 
-- **Images are hot-linked to Wix.** If the Wix site lapses, every photo on the site
-  breaks. They should be downloaded, optimized, and committed here.
-- **Unoptimized source images.** At least one hot-linked asset is a 5 MB PNG being
-  scaled down in the browser.
+- **Some source images are low resolution.** Several are only 400–700 px wide, which
+  is soft on high-density displays. They were that size on Wix; improving them means
+  going back to the original photography.
 - **Font licensing is unverified.** Didot HTF and Acid Grotesk are commercial
-  typefaces, and this is a public repository. Confirm the licenses permit web
-  embedding and redistribution before treating this as settled.
+  typefaces, and this is a public repository.

@@ -71,6 +71,35 @@
     .entry > span:nth-child(5)::before { content: "Media"; }
   }
 
+
+  .vmodal {
+    position: fixed; inset: 0; z-index: 200; display: none;
+    align-items: center; justify-content: center;
+    padding: clamp(16px, 4vw, 56px);
+    background: rgba(10,9,8,0.95);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  }
+  .vmodal[open] { display: flex; }
+  .vmodal-frame {
+    position: relative;
+    width: min(100%, 1180px, calc(78vh * 16 / 9));
+    aspect-ratio: 16 / 9;
+    background: #000; border: 1px solid rgba(60,166,173,0.45);
+    box-shadow: 0 0 0 1px rgba(60,166,173,0.08),
+                0 0 64px rgba(60,166,173,0.12),
+                0 30px 90px rgba(0,0,0,0.72);
+  }
+  .vmodal-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .vmodal-close {
+    position: absolute; top: -12px; right: 0; transform: translateY(-100%);
+    display: flex; align-items: center; gap: 10px;
+    min-height: 44px; padding: 8px 6px; background: none; border: 0; cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: #a49b8d;
+  }
+  .vmodal-close:hover { color: #3CA6AD; }
+  .vmodal-close:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; color: #3CA6AD; }
+
 </style>
 </head>
 <body>
@@ -318,6 +347,83 @@
   ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
     if(h === here()) return;
     fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
+  });
+})();
+</script>
+<script>
+(function(){
+  var modal, frame, closeBtn, lastFocus;
+  var RE = /(?:youtube\.com\/watch|youtu\.be\/|youtube(?:-nocookie)?\.com\/embed)/;
+
+  function videoId(href){
+    var m = href.match(/[?&]v=([\w-]{6,})/) ||
+            href.match(/youtu\.be\/([\w-]{6,})/) ||
+            href.match(/\/embed\/([\w-]{6,})/);
+    return m ? m[1] : null;
+  }
+
+  function build(){
+    if(modal) return;
+    modal = document.createElement('div');
+    modal.className = 'vmodal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Video player');
+    modal.innerHTML = '<div class="vmodal-frame">' +
+      '<button type="button" class="vmodal-close">Close <span aria-hidden="true">&#10005;</span></button>' +
+      '</div>';
+    document.body.appendChild(modal);
+    frame = modal.querySelector('.vmodal-frame');
+    closeBtn = modal.querySelector('.vmodal-close');
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', function(e){ if(e.target === modal) close(); });
+  }
+
+  function open(id, trigger){
+    build();
+    if(modal.hasAttribute('open')) return;
+    lastFocus = trigger || document.activeElement;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+    f.title = 'Video player';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen = true;
+    frame.appendChild(f);
+    modal.setAttribute('open', '');
+    document.documentElement.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function close(){
+    if(!modal || !modal.hasAttribute('open')) return;
+    modal.removeAttribute('open');
+    var f = frame.querySelector('iframe');
+    if(f) f.remove();
+    document.documentElement.style.overflow = '';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if(!a || e.defaultPrevented) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    var href = a.getAttribute('href') || '';
+    if(!RE.test(href)) return;
+    var id = videoId(href);
+    if(!id) return;
+    e.preventDefault();
+    open(id, a);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(!modal || !modal.hasAttribute('open')) return;
+    if(e.key === 'Escape' || e.key === 'Esc'){ close(); return; }
+    if(e.key !== 'Tab') return;
+    var stops = modal.querySelectorAll('button, iframe');
+    if(!stops.length) return;
+    var first = stops[0], last = stops[stops.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
   });
 })();
 </script>

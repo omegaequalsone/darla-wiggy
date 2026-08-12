@@ -37,17 +37,23 @@ need to be served over HTTP.
 ## Images
 
 All photography lives in `images/` and is served from this repo — nothing is hot-linked
-to the old Wix site. Filenames carry the first eight characters of the original Wix
-asset hash, so they are stable but not descriptive; they can be renamed to something
-readable as long as the references in the HTML are updated to match.
+to the old Wix site. Files are named for where they appear (`concert-01.jpg`,
+`home-cabaret.jpg`, `hero-portrait.jpg`) rather than for their subject, because most
+of the gallery captions in the markup are still `Caption needed` placeholders. Once
+the productions are identified, both the captions and the filenames are worth
+revisiting.
 
 The one remaining external image is the YouTube poster frame on `cabaret.html`, which
 is served from `i.ytimg.com` and belongs to the embedded video.
 
 ## Known issues
 
-- **Some source images are low resolution.** Several are only 400–700 px wide, which
-  is soft on high-density displays. They were that size on Wix; improving them means
-  going back to the original photography.
+- **Gallery captions are placeholders.** `concert.html` has 6 and `cabaret.html` has 4
+  reading `Caption needed · production, venue, year`. These are visible on the live page.
+- **Three images render soft.** The homepage cards are 431x586 boxes, but
+  `home-concert.jpg` is only 630x356 — short and wide — so `object-fit: cover` upscales
+  it about 1.65x before any Retina scaling. `home-cabaret.jpg` and `home-archive.jpg`
+  are close behind, and `concert-05.jpg` is 436x300. Fixing these means going back to
+  the original photography; they cannot be recovered by re-encoding.
 - **Font licensing is unverified.** Didot HTF and Acid Grotesk are commercial
   typefaces, and this is a public repository.

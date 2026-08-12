@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concert &amp; Opera · Darla Wigginton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/Didot-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/Didot-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Bold.otf" as="font" type="font/otf" crossorigin>
+<style>
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+  html { scroll-behavior: smooth; overflow-y: scroll; scrollbar-gutter: stable; }
+  html, body { margin: 0; padding: 0; background: #100e0c; }
+  html { scroll-padding-top: 90px; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #3CA6AD; }
+  a:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; }
+  ::selection { background: #3CA6AD; color: #100e0c; }
+  .navlinks {
+    display: flex; flex-wrap: wrap; gap: 14px clamp(20px, 2.6vw, 38px);
+    font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px); letter-spacing: 0.01em; color: #a49b8d;
+  }
+  .burger { display: none; }
+  #navtoggle { position: absolute; opacity: 0; pointer-events: none; }
+  @media (max-width: 780px) {
+    .burger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; margin-left: auto; cursor: pointer; padding: 10px 8px;
+    }
+    .burger span { display: block; height: 1.5px; background: #c9a26a; transition: transform .2s ease, opacity .2s ease; }
+    #navtoggle:checked ~ .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #navtoggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
+    #navtoggle:checked ~ .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .navlinks { display: none; }
+    #navtoggle:checked ~ .navlinks {
+      display: flex; flex-direction: column; align-items: flex-start;
+      width: 100%; gap: 18px; padding: 14px 0 6px;
+      border-top: 1px solid #211d19; margin-top: 4px;
+    }
+    #navtoggle:checked ~ .navlinks a { font-size: 22px; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #100e0c; color: #ece5da; font-family: 'Didot HTF', Didot, Georgia, serif">
+<a id="top"></a>
+  <div class="sitenav" style="position: sticky; top: 0; z-index: 50; background: rgba(16,14,12,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px clamp(20px, 3vw, 40px); padding: clamp(14px, 2vw, 24px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #211d19; min-height: clamp(66px, 7vw, 90px)">
+    <a href="index.html" style="flex: 0 0 auto; display: block; line-height: 0"><img src="uploads/dw-logo-svg-d1cc0b5d.svg" alt="Darla Wigginton" style="display: block; height: clamp(34px, 2.9vw, 40px); width: auto"></a>
+    <input type="checkbox" id="navtoggle" aria-label="Menu">
+    <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
+    <div class="navlinks">
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a><a href="about.html">About</a>
+    </div>
+  </div>
+  <main id="pagebody">
+
+  <div style="padding: clamp(56px, 6.6vw, 92px) clamp(20px, 4.4vw, 64px) clamp(36px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: clamp(28px, 5vw, 80px); align-items: flex-end; justify-content: space-between; border-bottom: 1px solid #1c1916">
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(14px, 1.8vw, 24px)">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.8vw, 10px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">As Darla</div>
+      <h1 style="margin: 0; font-size: clamp(42px, 6.2vw, 86px); font-weight: 400; line-height: 1; color: #f5f0e7">Concert &amp; Opera</h1>
+      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; font-size: clamp(17px, 1.4vw, 20px); color: #c3bbae; max-width: 34em; text-wrap: pretty">I started out as a classical singer. I really loved it and had some exceptional experiences — and I didn’t realize I was seeing some of the last glimpses of old-world glory.</p>
+    </div>
+    <div style="flex: 0 1 260px; display: flex; flex-direction: column; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.14em; text-transform: uppercase; color: #7a6f5e; line-height: 2.1">
+      <span style="color: #c9a26a">On this page</span>
+      <span>i · So classy</span>
+      <span>ii · In the chorus</span>
+      <span>iii · As a soloist</span>
+      <span>iv · On the concert stage</span>
+      <span>v · Theatre &amp; operetta</span>
+      <span>vi · New music</span>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">i<br><span style="color: #ece5da">So classy</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em">
+        <p style="margin: 0; text-wrap: pretty">The great diva Eva Marton as Turandot, only ten feet from me as I sang in the San Francisco Opera chorus. She insisted on wearing the traditional, original Met production costume instead of the David Hockney modern re-envisioning — she didn’t match the production, but a diva gets what a diva wants. One of my first glimpses of divadom.</p>
+        <p style="margin: 0; text-wrap: pretty">There were incredibly lush productions like Samson and Delilah that were a joy — this was before productions became predominantly digital. You really felt immersed in a real, historical place: onstage with the great Olga Borodina, getting crushed under styrofoam rocks as the walls fell around us, Olga receiving ovations that lasted forever.</p>
+        <p style="margin: 0; text-wrap: pretty">Or the extravagant Jean-Pierre Ponnelle production of Carmen, where I camped it up playing a small part during Denyce Graves’ debut in the title role — including a fight scene where she wrestled with me and carved a bloody X in my forehead. Don’t worry, it was food colouring. Even after she broke her foot in rehearsal she still performed the role and brought down the house.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">ii<br><span style="color: #ece5da">In the chorus</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em">
+        <p style="margin: 0; text-wrap: pretty">I’ve sung with both the San Francisco Opera and the San Francisco Symphony Chorus in over 200 productions, at the War Memorial Opera House, Davies Symphony Hall and Lincoln Center — conducted by Esa-Pekka Salonen, Michael Tilson Thomas, Kurt Masur, Donald Runnicles, Marin Alsop and many others.</p>
+        <p style="margin: 0; text-wrap: pretty">I was what is called an “extra chorister” — part of operas that needed hundreds of people onstage. So I got a great view, usually from the back with a farm implement in my hand crying out in a Russian revolution, or as one of the party-goers in La Traviata in sumptuous costumes and wigs. The film about the chorus, In the Shadow of the Stars, really shows what dedication and skill that work takes. I loved being part of it — and I also wanted to explore my own voice as a soloist.</p>
+        <p style="margin: 0; text-wrap: pretty">One of the best times I’ve had onstage was the Symphony Gala in 2019, with Nancy Pelosi, London Breed, Gavin Newsom and the cast of Beach Blanket Babylon onstage celebrating the great Michael Tilson Thomas. What a pleasure to contribute to the voices that celebrate San Francisco’s place as a cultural wonder, and a brave and proud celebrator of all people — especially those of us in the LGBTQ+ community.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #7a6f5e">Highlights</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 0 clamp(24px, 4vw, 56px)">
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Carmen</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Denyce Graves</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Turandot</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Eva Marton · filmed for PBS</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Don Carlos</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Samuel Ramey</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Samson and Delilah</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Olga Borodina</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Christophe Colomb</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Derek Jacobi, narrator</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Oedipus Rex</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">dir. Peter Sellars</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Salome</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Maria Ewing</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>A Midsummer Night’s Dream</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">African-American Shakespeare Co.</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>War and Peace</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">San Francisco Opera</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Arshak II</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">first Armenian classical opera</span></div>
+        </div>
+        <a href="archive.html" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #3CA6AD; margin-top: 6px">All 200+ chorus productions in the Archive →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: clamp(14px, 1.6vw, 20px)">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_80b5e2fde1c844c4b8abce701bcb1c81~mv2.jpg" alt="" style="width: 100%; height: clamp(150px, 15vw, 190px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_8fe096f6f5d9480982b0d7f18452a7d7~mv2.jpg" alt="" style="width: 100%; height: clamp(150px, 15vw, 190px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_e176efdee5144fb289d4cdc0771c8b1c~mv2.jpg" alt="" style="width: 100%; height: clamp(150px, 15vw, 190px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_df5ce9ea247044b98914dca9ca194296~mv2.jpg" alt="" style="width: 100%; height: clamp(150px, 15vw, 190px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">iii<br><span style="color: #ece5da">As a soloist</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em; text-wrap: pretty">As a soloist I performed with opera companies across the country and abroad, and with the festivals that gave me some of my best summers.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0 clamp(24px, 4vw, 56px)">
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Portland Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Connecticut Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Opera Illinois</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Opera San José</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Eugene Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Natchez Opera Festival</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Festival Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Ash Lawn-Highland Summer Festival</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Opera Barga, Italy</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Pocket Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Jefferson Performing Arts Society</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Oakland Lyric</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Oakland Opera Theatre</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Lamplighters Music Theatre</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">TheatreWorks</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Bronx Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">West Bay Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">San Francisco Lyric Opera</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Il Piccolo Teatro, Brooklyn</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">American Opera Projects</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">iv<br><span style="color: #ece5da">On the concert stage</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em">
+        <p style="margin: 0; text-wrap: pretty">In New York, singing with the New York Philharmonic as Kurt Masur conducted Carmina Burana during the Democratic Convention of 1994 — with Walter Cronkite and Yasser Arafat in the audience, the crowd leaping to its feet at the end in a glorious celebration of the power of great music. A memory I’ll treasure forever.</p>
+        <p style="margin: 0; text-wrap: pretty">With the San Francisco Symphony, conducted by Michael Tilson Thomas, as Alto Soloist and Courtesan in Le Rossignol. Falla’s El Amor Brujo. Dvořák’s Stabat Mater with the Sacramento Choral Society. Mozart’s Requiem with the Sacramento Philharmonic, conducted by Michael Morgan. Vivaldi’s Gloria, Handel’s Messiah, and a chamber orchestra production of Handel’s Atalanta — plus concerts and recitals in California, Mississippi, Illinois, New York, Virginia, Vermont and Oregon.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">v<br><span style="color: #ece5da">Theatre &amp; operetta</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em; text-wrap: pretty">I’ve always loved acting, so musical theatre and operetta are some of my favourite places to be. One of my favourite performances was in Stephen Sondheim’s Follies at the stunning Paramount Theater in Oakland, with Michael Morgan conducting and fellow performers Rita Moreno, Sharon McNight and Val Diamond. There I met The Golden Follies, with whom I’ve performed so many times since. As we say — it was love at first sequin.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 0 clamp(24px, 4vw, 56px)">
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Jesus Christ Superstar</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Mary</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Where’s Charley</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Amy</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>The Gondoliers</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Tessa</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Iolanthe</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">title role</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Jane Eyre</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Madwoman in the Attic</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Into the Woods</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Stepmother</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>A Little Night Music</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">Liebeslieder · Charlotte (cover)</span></div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3"><span>Follies</span><span style="color: #8c8377; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: right">“Losing My Mind”</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">vi<br><span style="color: #ece5da">New music</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em">
+        <p style="margin: 0; text-wrap: pretty">New music is so important, and some of the most extraordinary times I’ve had have been working on original pieces with new composers — at TheatreWorks (Jane Eyre), The Marsh, the SomArts Festival (Carla Lucero’s Suor Juana), and with The Friends and Enemies of New Music and American Opera Projects in New York.</p>
+        <p style="margin: 0; text-wrap: pretty">Works include Rusty Magee’s Flurry Tales, performed at Lincoln Center; staged readings of The Mistress Cycle by Beth Blatt and Jennifer Gierling; and A Virtual Show with multimedia visionary George Coates — the first to merge live performers with computer-generated stage environments in real time, and a collaborator of Steve Jobs.</p>
+        <p style="margin: 0; text-wrap: pretty">Festival Opera’s debut of Ned Rorem’s Our Town was another highlight. An idol of mine, the glorious Frederica von Stade, came backstage to congratulate Marnie Breckenridge, who was fantastic in the lead role. When Marnie introduced me, Flicka told me she thought I was terrific, and I thought I’d fall over from joy.</p>
+        <p style="margin: 0; text-wrap: pretty">Another passion project was Girlkulture, created with Anja Strauss, Ariela Morgenstern and Lara Bruckmann — a classical cabaret performing Holländer, Weill, Spoliansky, Gershwin and Cole Porter at the Gunn Theater at the Legion of Honor, Cinnabar Theater, Old First Concerts and many club appearances.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(14px, 1.6vw, 20px)">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_17d87ad66745466f86d14b2a9950b92c~mv2.jpg" alt="" style="width: 100%; height: clamp(200px, 18vw, 240px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Girlkulture · Legion of Honor</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_d8cd5bb41d4443ac9a4889588083636a~mv2.jpg" alt="" style="width: 100%; height: clamp(200px, 18vw, 240px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_7b7abd92ca3f453ea754b2865b233000~mv2.jpg" alt="" style="width: 100%; height: clamp(200px, 18vw, 240px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · production, venue, year</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
+    <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
+    <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
+  </div>
+  </main>
+</div>
+<script>
+(function(){
+  var main = document.getElementById('pagebody');
+  if(!main) return;
+  var cache = {};
+  var here = function(){ return location.pathname.split('/').pop() || 'index.html'; };
+  function markActive(){
+    var cur = here();
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.style.color = (a.getAttribute('href') === cur) ? '#ece5da' : '';
+    });
+  }
+  function swap(html, url, push){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var next = doc.getElementById('pagebody');
+    if(!next){ location.href = url; return; }
+    main.replaceWith(next);
+    main = next;
+    document.title = doc.title;
+    if(push) history.pushState({}, '', url);
+    window.scrollTo(0, 0);
+    var t = document.getElementById('navtoggle'); if(t) t.checked = false;
+    markActive();
+    if(next.animate){
+      var anim = next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: 'ease', fill: 'none' });
+      setTimeout(function(){ try { anim.finish(); } catch(e){} }, 320);
+    }
+  }
+  function go(url, push){
+    if(cache[url]) return swap(cache[url], url, push);
+    fetch(url).then(function(r){ return r.text(); }).then(function(t){ cache[url] = t; swap(t, url, push); })
+      .catch(function(){ location.href = url; });
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if(!a || e.defaultPrevented) return;
+    var href = a.getAttribute('href');
+    if(!href || a.target || href.charAt(0) === '#') return;
+    if(/^(https?:|mailto:|tel:)/.test(href) || !/\.html$/.test(href)) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    if(href === here()){ window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    go(href, true);
+  });
+  window.addEventListener('popstate', function(){ go(here(), false); });
+  markActive();
+  ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
+    if(h === here()) return;
+    fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>

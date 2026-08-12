@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · Darla Wigginton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/Didot-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/Didot-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Bold.otf" as="font" type="font/otf" crossorigin>
+<style>
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+  html { scroll-behavior: smooth; overflow-y: scroll; scrollbar-gutter: stable; }
+  html, body { margin: 0; padding: 0; background: #100e0c; }
+  html { scroll-padding-top: 90px; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #3CA6AD; }
+  a:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; }
+  ::selection { background: #3CA6AD; color: #100e0c; }
+  .navlinks {
+    display: flex; flex-wrap: wrap; gap: 14px clamp(20px, 2.6vw, 38px);
+    font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px); letter-spacing: 0.01em; color: #a49b8d;
+  }
+  .burger { display: none; }
+  #navtoggle { position: absolute; opacity: 0; pointer-events: none; }
+  @media (max-width: 780px) {
+    .burger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; margin-left: auto; cursor: pointer; padding: 10px 8px;
+    }
+    .burger span { display: block; height: 1.5px; background: #c9a26a; transition: transform .2s ease, opacity .2s ease; }
+    #navtoggle:checked ~ .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #navtoggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
+    #navtoggle:checked ~ .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .navlinks { display: none; }
+    #navtoggle:checked ~ .navlinks {
+      display: flex; flex-direction: column; align-items: flex-start;
+      width: 100%; gap: 18px; padding: 14px 0 6px;
+      border-top: 1px solid #211d19; margin-top: 4px;
+    }
+    #navtoggle:checked ~ .navlinks a { font-size: 22px; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #100e0c; color: #ece5da; font-family: 'Didot HTF', Didot, Georgia, serif">
+<a id="top"></a>
+  <div class="sitenav" style="position: sticky; top: 0; z-index: 50; background: rgba(16,14,12,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px clamp(20px, 3vw, 40px); padding: clamp(14px, 2vw, 24px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #211d19; min-height: clamp(66px, 7vw, 90px)">
+    <a href="index.html" style="flex: 0 0 auto; display: block; line-height: 0"><img src="uploads/dw-logo-svg-d1cc0b5d.svg" alt="Darla Wigginton" style="display: block; height: clamp(34px, 2.9vw, 40px); width: auto"></a>
+    <input type="checkbox" id="navtoggle" aria-label="Menu">
+    <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
+    <div class="navlinks">
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a><a href="about.html">About</a>
+    </div>
+  </div>
+  <main id="pagebody">
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); border-bottom: 1px solid #1c1916">
+    <div style="padding: clamp(48px, 6.6vw, 92px) clamp(20px, 4.4vw, 64px); display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 28px); justify-content: center">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.8vw, 10px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">Life as art</div>
+      <h1 style="margin: 0; font-size: clamp(38px, 4.6vw, 64px); font-weight: 400; line-height: 1.04; color: #f5f0e7; text-wrap: pretty">When life gets weird, make art. Or just make weird art.</h1>
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 40em">
+        <p style="margin: 0; text-wrap: pretty">My artistic life has been an exploration, with the goal to entertain — both myself and others. I’ve been fortunate to enjoy some incredible times making art with some of the most creative, silly, adventurous and lovely artists and musicians — both as Darla Wigginton and as my alter ego, Wiggy Darlington.</p>
+        <p style="margin: 0; text-wrap: pretty">I started out as a classical singer, and got to enjoy music-making across the U.S., Italy and Japan before I hopped over to the cabaret world. I still sing with the San Francisco Symphony Chorus and the Santa Fe Symphony Chorus. I have such gratitude for the experiences I’ve had, the artists and creators I’ve known, and all who bring music and art to the world.</p>
+      </div>
+    </div>
+    <div style="position: relative; overflow: hidden; min-height: clamp(340px, 44vw, 620px)">
+      <img src="https://static.wixstatic.com/media/1e56c4_dbe157dc59fb4fcbac7a27dc282dfd2a~mv2.png" alt="Darla Wigginton" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3) brightness(0.78)">
+    </div>
+  </div>
+
+  <div style="padding: clamp(56px, 7vw, 100px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #1c1916; display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 64px)">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">Press<br><span style="color: #ece5da">San Francisco Chronicle</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px); min-width: 0">
+      <blockquote style="margin: 0; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.38; font-weight: 400; color: #efe8dc; max-width: 26em; text-wrap: pretty">“In a score full of knockout vocal numbers, nothing quite matched the quietly devastating blow that Darla Wigginton delivered near the end of the evening. The house went still. The heat of full-out confession built. Phrases flamed up and flickered into faraway silence.”</blockquote>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; color: #8c8377; line-height: 1.9">Steven Winn · Follies · Paramount Theatre, Oakland</div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(56px, 7vw, 100px) clamp(20px, 4.4vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(28px, 4vw, 56px)">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Booking &amp; enquiries</div>
+      <a href="mailto:hello@darlawigginton.com" style="font-size: clamp(22px, 2.2vw, 30px); color: #3CA6AD">hello@darlawigginton.com</a>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Materials</div>
+      <a href="#" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">Résumé (PDF)</a>
+      <a href="#" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">Headshots</a>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Design studio</div>
+      <a href="http://www.sfpowerplay.com" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">PowerPlay ↗</a>
+      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; font-size: clamp(14px, 1.1vw, 16px); max-width: 26em">Presentation design for Google, Airbnb, LinkedIn, Visa and the San Francisco Symphony — the work that supports the music-making.</p>
+    </div>
+  </div>
+  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
+    <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
+    <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
+  </div>
+  </main>
+</div>
+<script>
+(function(){
+  var main = document.getElementById('pagebody');
+  if(!main) return;
+  var cache = {};
+  var here = function(){ return location.pathname.split('/').pop() || 'index.html'; };
+  function markActive(){
+    var cur = here();
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.style.color = (a.getAttribute('href') === cur) ? '#ece5da' : '';
+    });
+  }
+  function swap(html, url, push){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var next = doc.getElementById('pagebody');
+    if(!next){ location.href = url; return; }
+    main.replaceWith(next);
+    main = next;
+    document.title = doc.title;
+    if(push) history.pushState({}, '', url);
+    window.scrollTo(0, 0);
+    var t = document.getElementById('navtoggle'); if(t) t.checked = false;
+    markActive();
+    if(next.animate){
+      var anim = next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: 'ease', fill: 'none' });
+      setTimeout(function(){ try { anim.finish(); } catch(e){} }, 320);
+    }
+  }
+  function go(url, push){
+    if(cache[url]) return swap(cache[url], url, push);
+    fetch(url).then(function(r){ return r.text(); }).then(function(t){ cache[url] = t; swap(t, url, push); })
+      .catch(function(){ location.href = url; });
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if(!a || e.defaultPrevented) return;
+    var href = a.getAttribute('href');
+    if(!href || a.target || href.charAt(0) === '#') return;
+    if(/^(https?:|mailto:|tel:)/.test(href) || !/\.html$/.test(href)) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    if(href === here()){ window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    go(href, true);
+  });
+  window.addEventListener('popstate', function(){ go(here(), false); });
+  markActive();
+  ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
+    if(h === here()) return;
+    fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>

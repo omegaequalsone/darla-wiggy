@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darla Wigginton · Wiggy Darlington</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/Didot-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/Didot-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Bold.otf" as="font" type="font/otf" crossorigin>
+<style>
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+  html { scroll-behavior: smooth; overflow-y: scroll; scrollbar-gutter: stable; }
+  html, body { margin: 0; padding: 0; background: #100e0c; }
+  html { scroll-padding-top: 90px; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #3CA6AD; }
+  a:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; }
+  ::selection { background: #3CA6AD; color: #100e0c; }
+  .navlinks {
+    display: flex; flex-wrap: wrap; gap: 14px clamp(20px, 2.6vw, 38px);
+    font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px); letter-spacing: 0.01em; color: #a49b8d;
+  }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: stretch; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
+  .burger { display: none; }
+  #navtoggle { position: absolute; opacity: 0; pointer-events: none; }
+  @media (max-width: 780px) {
+    .burger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; margin-left: auto; cursor: pointer; padding: 10px 8px;
+    }
+    .burger span { display: block; height: 1.5px; background: #c9a26a; transition: transform .2s ease, opacity .2s ease; }
+    #navtoggle:checked ~ .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #navtoggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
+    #navtoggle:checked ~ .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .navlinks { display: none; }
+    #navtoggle:checked ~ .navlinks {
+      display: flex; flex-direction: column; align-items: flex-start;
+      width: 100%; gap: 18px; padding: 14px 0 6px;
+      border-top: 1px solid #211d19; margin-top: 4px;
+    }
+    #navtoggle:checked ~ .navlinks a { font-size: 22px; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #100e0c; color: #ece5da; font-family: 'Didot HTF', Didot, Georgia, serif">
+<a id="top"></a>
+  <div class="sitenav" style="position: sticky; top: 0; z-index: 50; background: rgba(16,14,12,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px clamp(20px, 3vw, 40px); padding: clamp(14px, 2vw, 24px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #211d19; min-height: clamp(66px, 7vw, 90px)">
+    <a href="index.html" style="flex: 0 0 auto; display: block; line-height: 0"><img src="uploads/dw-logo-svg-d1cc0b5d.svg" alt="Darla Wigginton" style="display: block; height: clamp(34px, 2.9vw, 40px); width: auto"></a>
+    <input type="checkbox" id="navtoggle" aria-label="Menu">
+    <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
+    <div class="navlinks">
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a><a href="about.html">About</a>
+    </div>
+  </div>
+  <main id="pagebody">
+
+  <div class="hero">
+    <div style="padding: clamp(48px, 7vw, 104px) clamp(20px, 4.4vw, 64px); display: flex; flex-direction: column; gap: clamp(20px, 2.4vw, 32px); justify-content: center; min-height: clamp(420px, 62vw, 760px)">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.8vw, 10px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">Review – San Francisco Chronicle</div>
+      <blockquote style="margin: 0; font-size: clamp(23px, 2.15vw, 33px); line-height: 1.3; font-weight: 400; color: #FFFFFF; max-width: 42em; text-wrap: pretty">“In a score full of knockout vocal numbers, nothing quite matched the quietly devastating blow that Darla Wigginton delivered near the end of the evening with “Losing My Mind”. Standing on the lip of the Paramount stage, as if riveted in place there by the unfulfilled love of a lifetime, the raven-haired Wigginton made this great torch song a murmurous aria of anguish. The house went still. The heat of full-out confession built. Phrases flamed up and flickered into faraway silence. The greatness of Sondheim’s art, felt here in the expansive, aching contours of the music paired with the poignant concision of his lyrics, swamped the listener’s heart.”</blockquote>
+      <div style="display: flex; align-items: center; gap: clamp(12px, 1.4vw, 20px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.18em; text-transform: uppercase; color: #8c8377">
+        <span style="height: 1px; width: clamp(34px, 4.4vw, 62px); background: #3a3128"></span><span>Steven Winn · Follies, Paramount Theatre</span>
+      </div>
+    </div>
+    <div style="position: relative; overflow: hidden; min-height: clamp(360px, 56vw, 760px)">
+      <img src="https://static.wixstatic.com/media/1e56c4_0fce9f2e1c304513903074e04def922f~mv2_d_1944_2592_s_2.jpg" alt="Darla Wigginton" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: grayscale(0.35) contrast(1.05) brightness(0.72)">
+      <div style="position: absolute; inset: 0; background: linear-gradient(to right, #100e0c 0%, rgba(16,14,12,0.12) 36%, rgba(16,14,12,0))"></div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(52px, 6vw, 84px) clamp(20px, 4.4vw, 64px) clamp(18px, 2vw, 26px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Three ways in</div>
+  <div style="padding: 0 clamp(20px, 4.4vw, 64px) clamp(60px, 7vw, 92px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); grid-template-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; grid-auto-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; gap: 2px">
+    <a href="concert.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('https://static.wixstatic.com/media/1e56c4_877c5d0b9a4b4e1885cf7f974aa0dc24~mv2.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">i · as Darla</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">Concert &amp; Opera</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Soloist with eighteen companies. Two hundred nights in the San Francisco Opera chorus. Carmina Burana with the New York Philharmonic.</div>
+      </div>
+    </a>
+    <a href="cabaret.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('https://static.wixstatic.com/media/1e56c4_859ae5f5d3aa4bfd8394afb67d5ccdbd~mv2.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">ii · as Wiggy</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">Cabaret</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Hubba Hubba Revue, the Golden Follies, the Edwardian Ball, and every dive worth the name.</div>
+      </div>
+    </a>
+    <a href="archive.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('https://static.wixstatic.com/media/1e56c4_9631a55454c943df856d0c3baf016ae0~mv2.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">iii · the record</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">The Archive</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Every company, role, venue and conductor, dated and credited.</div>
+      </div>
+    </a>
+  </div>
+
+  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
+    <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
+    <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
+  </div>
+  </main>
+</div>
+<script>
+(function(){
+  var main = document.getElementById('pagebody');
+  if(!main) return;
+  var cache = {};
+  var here = function(){ return location.pathname.split('/').pop() || 'index.html'; };
+  function markActive(){
+    var cur = here();
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.style.color = (a.getAttribute('href') === cur) ? '#ece5da' : '';
+    });
+  }
+  function swap(html, url, push){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var next = doc.getElementById('pagebody');
+    if(!next){ location.href = url; return; }
+    main.replaceWith(next);
+    main = next;
+    document.title = doc.title;
+    if(push) history.pushState({}, '', url);
+    window.scrollTo(0, 0);
+    var t = document.getElementById('navtoggle'); if(t) t.checked = false;
+    markActive();
+    if(next.animate){
+      var anim = next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: 'ease', fill: 'none' });
+      setTimeout(function(){ try { anim.finish(); } catch(e){} }, 320);
+    }
+  }
+  function go(url, push){
+    if(cache[url]) return swap(cache[url], url, push);
+    fetch(url).then(function(r){ return r.text(); }).then(function(t){ cache[url] = t; swap(t, url, push); })
+      .catch(function(){ location.href = url; });
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if(!a || e.defaultPrevented) return;
+    var href = a.getAttribute('href');
+    if(!href || a.target || href.charAt(0) === '#') return;
+    if(/^(https?:|mailto:|tel:)/.test(href) || !/\.html$/.test(href)) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    if(href === here()){ window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    go(href, true);
+  });
+  window.addEventListener('popstate', function(){ go(here(), false); });
+  markActive();
+  ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
+    if(h === here()) return;
+    fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>

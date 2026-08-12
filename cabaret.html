@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cabaret · Wiggy Darlington</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/Didot-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="fonts/Didot-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="uploads/AcidGrotesk-Bold.otf" as="font" type="font/otf" crossorigin>
+<style>
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Acid Grotesk'; src: url('uploads/AcidGrotesk-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: block; }
+  @font-face { font-family: 'Didot HTF'; src: url('fonts/Didot-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: block; }
+  html { scroll-behavior: smooth; overflow-y: scroll; scrollbar-gutter: stable; }
+  html, body { margin: 0; padding: 0; background: #100e0c; }
+  html { scroll-padding-top: 90px; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: #3CA6AD; }
+  a:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; }
+  ::selection { background: #3CA6AD; color: #100e0c; }
+  .navlinks {
+    display: flex; flex-wrap: wrap; gap: 14px clamp(20px, 2.6vw, 38px);
+    font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif;
+    font-size: clamp(16px, 1.35vw, 19px); letter-spacing: 0.01em; color: #a49b8d;
+  }
+  .burger { display: none; }
+  #navtoggle { position: absolute; opacity: 0; pointer-events: none; }
+  @media (max-width: 780px) {
+    .burger {
+      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+      width: 44px; height: 44px; margin-left: auto; cursor: pointer; padding: 10px 8px;
+    }
+    .burger span { display: block; height: 1.5px; background: #c9a26a; transition: transform .2s ease, opacity .2s ease; }
+    #navtoggle:checked ~ .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    #navtoggle:checked ~ .burger span:nth-child(2) { opacity: 0; }
+    #navtoggle:checked ~ .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .navlinks { display: none; }
+    #navtoggle:checked ~ .navlinks {
+      display: flex; flex-direction: column; align-items: flex-start;
+      width: 100%; gap: 18px; padding: 14px 0 6px;
+      border-top: 1px solid #211d19; margin-top: 4px;
+    }
+    #navtoggle:checked ~ .navlinks a { font-size: 22px; }
+  }
+
+</style>
+</head>
+<body>
+<div style="width: 100%; background: #100e0c; color: #ece5da; font-family: 'Didot HTF', Didot, Georgia, serif">
+<a id="top"></a>
+  <div class="sitenav" style="position: sticky; top: 0; z-index: 50; background: rgba(16,14,12,0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px clamp(20px, 3vw, 40px); padding: clamp(14px, 2vw, 24px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #211d19; min-height: clamp(66px, 7vw, 90px)">
+    <a href="index.html" style="flex: 0 0 auto; display: block; line-height: 0"><img src="uploads/dw-logo-svg-d1cc0b5d.svg" alt="Darla Wigginton" style="display: block; height: clamp(34px, 2.9vw, 40px); width: auto"></a>
+    <input type="checkbox" id="navtoggle" aria-label="Menu">
+    <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
+    <div class="navlinks">
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a><a href="about.html">About</a>
+    </div>
+  </div>
+  <main id="pagebody">
+
+  <div style="position: relative; min-height: clamp(420px, 46vw, 620px); overflow: hidden">
+    <img src="https://i.ytimg.com/vi/hrNOdNwzNfM/maxresdefault.jpg" alt="Cabaret reel" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3) brightness(0.55)">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, #100e0c 2%, rgba(16,14,12,0.3) 62%, rgba(16,14,12,0.5))"></div>
+    <div style="position: absolute; inset: 0; padding: clamp(28px, 4vw, 56px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 40px); justify-content: space-between; align-items: flex-end">
+      <div style="flex: 1 1 min(100%, 420px); display: flex; flex-direction: column; gap: clamp(14px, 1.8vw, 20px)">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">As Wiggy</div>
+        <h1 style="margin: 0; font-size: clamp(48px, 6.8vw, 92px); font-weight: 400; line-height: 0.98; color: #f5f0e7">Cabaret</h1>
+        <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; font-size: clamp(17px, 1.45vw, 21px); color: #cfc7ba; max-width: 32em; text-wrap: pretty">Wiggy Darlington is born. After singing as a classical singer for many years, I decided to branch out into cabaret and the business we call “show”.</p>
+      </div>
+      <a href="https://www.youtube.com/watch?v=hrNOdNwzNfM" style="flex: 0 0 auto; display: flex; align-items: center; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #f0ebe2">
+        <span style="width: clamp(48px, 4.6vw, 62px); height: clamp(48px, 4.6vw, 62px); border: 1px solid #3CA6AD; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; color: #3CA6AD">▶</span>
+        <span>Watch the reel</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">i<br><span style="color: #ece5da">Wiggy is born</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em">
+        <p style="margin: 0; text-wrap: pretty">Classical music and music theatre were wonderful places to explore serious music — but I was feeling less serious and ready to experiment. The San Francisco era of dive bar shows, DNA Lounge extravaganzas and epically inventive shows drew me in with crazy good performances that let my imagination out of its classical strictures.</p>
+        <p style="margin: 0; text-wrap: pretty">So many wild times. Skotty the Blue Bunny towering over us, MCing in skintight blue lycra and sky-high plastic heels. Jamie DeWolf, mastermind of one of Oakland’s cultural gems, onstage with me in a full-size boxing ring working the crowd into a frenzy — me as Lady Wiener in a full-body hot dog costume, singing a mashup I rewrote of “On My Own” from Les Miz and “Rose’s Turn” from Gypsy.</p>
+        <p style="margin: 0; text-wrap: pretty">Bunny Pistol’s excellent variety show at Yoshi’s when it was on Fillmore. Shows at The Plush Room. Singing at the Regency for the Edwardian Ball. Backstage at DNA with the cast of Hubba Hubba. There is nothing as close to my heart as a raunchy group of artists having hysterically good times backstage — which is where the real show happens.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(14px, 1.6vw, 20px)">
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_f107fcd7d12b4864b73543d511a82ead~mv2.jpg" alt="" style="width: 100%; height: clamp(180px, 17vw, 230px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · show, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_8ec9ec3b3a96481d8fb4b25e121ae75c~mv2.jpg" alt="" style="width: 100%; height: clamp(180px, 17vw, 230px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · show, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_b6fd7133d86f46d29465c47d7534d3d1~mv2.jpg" alt="" style="width: 100%; height: clamp(180px, 17vw, 230px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · show, venue, year</figcaption>
+      </figure>
+      <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+        <img src="https://static.wixstatic.com/media/1e56c4_dcee6883adb64478b680cb81d8f1daec~mv2.jpg" alt="" style="width: 100%; height: clamp(180px, 17vw, 230px); object-fit: cover; filter: grayscale(0.4) brightness(0.88)">
+        <figcaption style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; line-height: 1.7; letter-spacing: 0.05em; color: #6f665a">Caption needed · show, venue, year</figcaption>
+      </figure>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">ii<br><span style="color: #ece5da">Companies &amp; revues</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0 clamp(24px, 4vw, 56px)">
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Hubba Hubba Revue</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Golden Follies</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Fishnet Follies</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Red Hots Burlesque</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Barbary Coast Burlesque</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Tourettes Without Regrets</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Sin Sisters Burlesque</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Edwardian Ball</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Grant Avenue Follies</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: clamp(48px, 6vw, 84px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(22px, 3.6vw, 64px); border-bottom: 1px solid #1c1916">
+    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">iii<br><span style="color: #ece5da">Rooms</span></div>
+    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(24px, 3vw, 34px); min-width: 0">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 0 clamp(24px, 4vw, 56px)">
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Oasis</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Chapel</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Castro Theatre</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Paramount Theater</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Regency Ballroom</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Herbst Theatre</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Bimbo’s 365 Club</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Rrazz Room, Hotel Nikko</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Firehouse</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Café du Nord</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Club Deluxe</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">DNA Lounge</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Yoshi’s</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Plush Room</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The Purple Onion</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">Amnesia</div>
+        <div style="padding: 13px 0; border-bottom: 1px solid #1c1916; font-size: clamp(17px, 1.35vw, 20px); color: #d6cfc3">The 16th Note</div>
+      </div>
+      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 44em; text-wrap: pretty">I’ve been proud to perform in many of the glorious — and/or seedy — dives that San Francisco was famous for. May many more crop up to entertain and keep the underground thriving.</p>
+    </div>
+  </div>
+  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
+    <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
+    <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
+  </div>
+  </main>
+</div>
+<script>
+(function(){
+  var main = document.getElementById('pagebody');
+  if(!main) return;
+  var cache = {};
+  var here = function(){ return location.pathname.split('/').pop() || 'index.html'; };
+  function markActive(){
+    var cur = here();
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.style.color = (a.getAttribute('href') === cur) ? '#ece5da' : '';
+    });
+  }
+  function swap(html, url, push){
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var next = doc.getElementById('pagebody');
+    if(!next){ location.href = url; return; }
+    main.replaceWith(next);
+    main = next;
+    document.title = doc.title;
+    if(push) history.pushState({}, '', url);
+    window.scrollTo(0, 0);
+    var t = document.getElementById('navtoggle'); if(t) t.checked = false;
+    markActive();
+    if(next.animate){
+      var anim = next.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 260, easing: 'ease', fill: 'none' });
+      setTimeout(function(){ try { anim.finish(); } catch(e){} }, 320);
+    }
+  }
+  function go(url, push){
+    if(cache[url]) return swap(cache[url], url, push);
+    fetch(url).then(function(r){ return r.text(); }).then(function(t){ cache[url] = t; swap(t, url, push); })
+      .catch(function(){ location.href = url; });
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if(!a || e.defaultPrevented) return;
+    var href = a.getAttribute('href');
+    if(!href || a.target || href.charAt(0) === '#') return;
+    if(/^(https?:|mailto:|tel:)/.test(href) || !/\.html$/.test(href)) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    if(href === here()){ window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    go(href, true);
+  });
+  window.addEventListener('popstate', function(){ go(here(), false); });
+  markActive();
+  ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
+    if(h === here()) return;
+    fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>

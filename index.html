@@ -124,7 +124,7 @@
     <input type="checkbox" id="navtoggle" aria-label="Menu">
     <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a>
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">Performance history</a>
     </div>
   </div>
   <main id="pagebody">
@@ -153,7 +153,9 @@
     </div>
   </div>
 
-  <div style="padding: clamp(52px, 6vw, 84px) clamp(20px, 4.4vw, 64px) clamp(18px, 2vw, 26px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Three ways in</div>
+  <!-- turquoise keyline opens the section; this element also carries the label
+       and the top padding the old heading used to supply -->
+  <div style="margin: 0 clamp(20px, 4.4vw, 64px); border-top: 1px solid #3CA6AD; padding: clamp(52px, 6vw, 84px) 0 clamp(18px, 2vw, 26px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.22em; text-transform: uppercase; color: #8c8377">The work</div>
   <div style="padding: 0 clamp(20px, 4.4vw, 64px) clamp(60px, 7vw, 92px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); grid-template-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; grid-auto-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; gap: 2px">
     <a href="concert.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('images/home-concert.jpg'); background-size: cover, cover; background-position: center, center">
       <span aria-hidden="true"></span>
@@ -172,7 +174,7 @@
     <a href="archive.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('images/home-archive.jpg'); background-size: cover, cover; background-position: center, center">
       <span aria-hidden="true"></span>
       <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
-        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">The Archive</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">Performance history</div>
         <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Every company, role, venue and conductor, dated and credited.</div>
       </div>
     </a>

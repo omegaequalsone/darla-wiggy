@@ -5,10 +5,10 @@ Darla Wigginton website — static HTML site.
 ## Structure
 
 ```
-index.html            Home — bio, press quote, Three ways in
+index.html            Home — bio, press quote, The work
 concert.html          Concert & Opera
 cabaret.html          Cabaret
-archive.html          The Archive
+archive.html          Performance history
 home-original.html    Parked: the previous home page, unlinked
 fonts/                Didot HTF (regular, bold)
 uploads/              Acid Grotesk (regular, bold), logo SVG
@@ -19,7 +19,9 @@ Each page is self-contained: styles live in an inline `<style>` block, so there 
 build step and no CSS bundle to keep in sync. Edit the HTML directly.
 
 There is no About page. Its content is the home page — reachable via the logo. The nav
-is Concert & Opera / Cabaret / The Archive.
+is Concert & Opera / Cabaret / Performance history.
+
+The file is still named `archive.html`; only the label changed.
 
 `home-original.html` is a snapshot of the home page as it stood before that swap, kept
 so material can be pulled back out of it. It is deliberately untouched, so it still
@@ -88,7 +90,7 @@ render at or below 1.0x and are sharp; the softness is concentrated in a few slo
 - **`home-cabaret.jpg` and `home-archive.jpg` are soft on Retina only** (1.77x / 1.76x).
   Both are 1024x680, which is a perfectly good file — the card box is simply oversized.
   Capping the cards at 380px wide takes them to 1.31x with no new photography.
-- **`concert.html` overstates the Archive.** Its link reads "All 200+ chorus
-  productions", but the Archive holds 18 rows, 4 of them chorus.
+- **`concert.html` overstates the performance history.** Its link reads "All 200+
+  chorus productions", but the page holds 18 rows, 4 of them chorus.
 - **The site has no contact route.** Removing the footer took
   `hello@darlawigginton.com` with it. There is no email, booking or social link.

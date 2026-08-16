@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About · Darla Wigginton</title>
+<title>Darla Wigginton · Wiggy Darlington</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,6 +30,8 @@
     font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif;
     font-size: clamp(16px, 1.35vw, 19px); letter-spacing: 0.01em; color: #a49b8d;
   }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); align-items: stretch; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
   .burger { display: none; }
   #navtoggle { position: absolute; opacity: 0; pointer-events: none; }
   @media (max-width: 780px) {
@@ -94,45 +96,49 @@
   </div>
   <main id="pagebody">
 
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); border-bottom: 1px solid #1c1916">
-    <div style="padding: clamp(48px, 6.6vw, 92px) clamp(20px, 4.4vw, 64px); display: flex; flex-direction: column; gap: clamp(18px, 2.2vw, 28px); justify-content: center">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.8vw, 10px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">Life as art</div>
-      <h1 style="margin: 0; font-size: clamp(38px, 4.6vw, 64px); font-weight: 400; line-height: 1.04; color: #f5f0e7; text-wrap: pretty">When life gets weird, make art. Or just make weird art.</h1>
-      <div style="display: flex; flex-direction: column; gap: clamp(18px, 1.8vw, 24px); font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; max-width: 40em">
-        <p style="margin: 0; text-wrap: pretty">My artistic life has been an exploration, with the goal to entertain — both myself and others. I’ve been fortunate to enjoy some incredible times making art with some of the most creative, silly, adventurous and lovely artists and musicians — both as Darla Wigginton and as my alter ego, Wiggy Darlington.</p>
-        <p style="margin: 0; text-wrap: pretty">I started out as a classical singer, and got to enjoy music-making across the U.S., Italy and Japan before I hopped over to the cabaret world. I still sing with the San Francisco Symphony Chorus and the Santa Fe Symphony Chorus. I have such gratitude for the experiences I’ve had, the artists and creators I’ve known, and all who bring music and art to the world.</p>
+  <div class="hero">
+    <div style="padding: clamp(48px, 7vw, 104px) clamp(20px, 4.4vw, 64px); display: flex; flex-direction: column; gap: clamp(20px, 2.4vw, 32px); justify-content: center; min-height: clamp(420px, 62vw, 760px)">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.8vw, 10px); letter-spacing: 0.3em; text-transform: uppercase; color: #c9a26a">Review – San Francisco Chronicle</div>
+      <blockquote style="margin: 0; font-size: clamp(23px, 2.15vw, 33px); line-height: 1.3; font-weight: 400; color: #FFFFFF; max-width: 42em; text-wrap: pretty">“In a score full of knockout vocal numbers, nothing quite matched the quietly devastating blow that Darla Wigginton delivered near the end of the evening with “Losing My Mind”. Standing on the lip of the Paramount stage, as if riveted in place there by the unfulfilled love of a lifetime, the raven-haired Wigginton made this great torch song a murmurous aria of anguish. The house went still. The heat of full-out confession built. Phrases flamed up and flickered into faraway silence. The greatness of Sondheim’s art, felt here in the expansive, aching contours of the music paired with the poignant concision of his lyrics, swamped the listener’s heart.”</blockquote>
+      <div style="display: flex; align-items: center; gap: clamp(12px, 1.4vw, 20px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.18em; text-transform: uppercase; color: #8c8377">
+        <span style="height: 1px; width: clamp(34px, 4.4vw, 62px); background: #3a3128"></span><span>Steven Winn · Follies, Paramount Theatre</span>
       </div>
     </div>
-    <div style="position: relative; overflow: hidden; min-height: clamp(340px, 44vw, 620px)">
-      <img src="images/about-portrait.jpg" alt="Darla Wigginton" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(0.3) brightness(0.78)">
+    <div style="position: relative; overflow: hidden; min-height: clamp(360px, 56vw, 760px)">
+      <img src="images/hero-portrait.jpg" alt="Darla Wigginton" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; filter: grayscale(0.35) contrast(1.05) brightness(0.72)">
+      <div style="position: absolute; inset: 0; background: linear-gradient(to right, #100e0c 0%, rgba(16,14,12,0.12) 36%, rgba(16,14,12,0))"></div>
     </div>
   </div>
 
-  <div style="padding: clamp(56px, 7vw, 100px) clamp(20px, 4.4vw, 64px); border-bottom: 1px solid #1c1916; display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 64px)">
-    <div style="flex: 0 0 clamp(110px, 17vw, 240px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.2em; text-transform: uppercase; color: #7a6f5e; line-height: 1.9">Press<br><span style="color: #ece5da">San Francisco Chronicle</span></div>
-    <div style="flex: 1 1 min(100%, 440px); display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px); min-width: 0">
-      <blockquote style="margin: 0; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.38; font-weight: 400; color: #efe8dc; max-width: 26em; text-wrap: pretty">“In a score full of knockout vocal numbers, nothing quite matched the quietly devastating blow that Darla Wigginton delivered near the end of the evening. The house went still. The heat of full-out confession built. Phrases flamed up and flickered into faraway silence.”</blockquote>
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; color: #8c8377; line-height: 1.9">Steven Winn · Follies · Paramount Theatre, Oakland</div>
-    </div>
+  <div style="padding: clamp(52px, 6vw, 84px) clamp(20px, 4.4vw, 64px) clamp(18px, 2vw, 26px); font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.9vw, 11px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Three ways in</div>
+  <div style="padding: 0 clamp(20px, 4.4vw, 64px) clamp(60px, 7vw, 92px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); grid-template-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; grid-auto-rows: minmax(clamp(240px, 24vw, 380px), 1fr) auto; gap: 2px">
+    <a href="concert.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('images/home-concert.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">i · as Darla</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">Concert &amp; Opera</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Soloist with eighteen companies. Two hundred nights in the San Francisco Opera chorus. Carmina Burana with the New York Philharmonic.</div>
+      </div>
+    </a>
+    <a href="cabaret.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('images/home-cabaret.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">ii · as Wiggy</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">Cabaret</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Hubba Hubba Revue, the Golden Follies, the Edwardian Ball, and every dive worth the name.</div>
+      </div>
+    </a>
+    <a href="archive.html" style="grid-row: span 2; display: grid; grid-template-rows: subgrid; background-image: linear-gradient(to top, rgba(16,14,12,0.96) 0%, rgba(16,14,12,0.9) 34%, rgba(16,14,12,0.25) 62%, rgba(16,14,12,0.05) 100%), url('images/home-archive.jpg'); background-size: cover, cover; background-position: center, center">
+      <span aria-hidden="true"></span>
+      <div style="align-self: start; padding: clamp(20px, 2.4vw, 32px) clamp(24px, 2.8vw, 40px) clamp(28px, 3.2vw, 44px); display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: #c9a26a">iii · the record</div>
+        <div style="font-size: clamp(24px, 2vw, 30px); font-weight: 400; line-height: 1.1; color: #f0ebe2">The Archive</div>
+        <div style="font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(14px, 1.15vw, 16px); line-height: 1.55; color: #b9b1a4">Every company, role, venue and conductor, dated and credited.</div>
+      </div>
+    </a>
   </div>
 
-  <div style="padding: clamp(56px, 7vw, 100px) clamp(20px, 4.4vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(28px, 4vw, 56px)">
-    <div style="display: flex; flex-direction: column; gap: 12px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Booking &amp; enquiries</div>
-      <a href="mailto:hello@darlawigginton.com" style="font-size: clamp(22px, 2.2vw, 30px); color: #3CA6AD">hello@darlawigginton.com</a>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 12px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Materials</div>
-      <a href="#" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">Résumé (PDF)</a>
-      <a href="#" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">Headshots</a>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 12px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Design studio</div>
-      <a href="http://www.sfpowerplay.com" style="font-size: clamp(22px, 2.2vw, 30px); color: #f0ebe2">PowerPlay ↗</a>
-      <p style="margin: 0; font-family: 'Acid Grotesk', Helvetica, Arial, sans-serif; font-size: clamp(16px, 1.2vw, 19px); line-height: 1.7; color: #b6ada0; font-size: clamp(14px, 1.1vw, 16px); max-width: 26em">Presentation design for Google, Airbnb, LinkedIn, Visa and the San Francisco Symphony — the work that supports the music-making.</p>
-    </div>
-  </div>
-  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
+  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8377">
     <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
     <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
   </div>

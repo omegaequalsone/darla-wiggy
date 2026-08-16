@@ -61,7 +61,7 @@
       font-size: 9px;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #6f665a;
+      color: #8c8377;
       margin-bottom: 2px;
     }
     .entry > span:nth-child(1)::before { content: none; }
@@ -71,6 +71,25 @@
     .entry > span:nth-child(5)::before { content: "Media"; }
   }
 
+
+  /* Archive filters. Chips are real <button>s so they are keyboard operable;
+     state lives in aria-pressed so the styling and the a11y tree cannot drift. */
+  .chip {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: clamp(9.5px, 0.8vw, 10.5px);
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 8px 14px; border: 1px solid #302a23;
+    color: #8c8377; background: transparent; cursor: pointer;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .chip:hover { color: #ece5da; border-color: #8c8377; }
+  .chip[aria-pressed="true"] { background: #3CA6AD; border-color: #3CA6AD; color: #0d2b2c; }
+  .chip:focus-visible { outline: 2px solid #3CA6AD; outline-offset: 3px; }
+  .entry[hidden] { display: none !important; }
+  #archive-empty { display: none; }
+  #archive-empty[data-shown] { display: block; }
+  /* with no rows showing, a bare column header reads as a broken table */
+  .entry-head[hidden] { display: none !important; }
 
   .vmodal {
     position: fixed; inset: 0; z-index: 200; display: none;
@@ -110,7 +129,7 @@
     <input type="checkbox" id="navtoggle" aria-label="Menu">
     <label class="burger" for="navtoggle" aria-hidden="true"><span></span><span></span><span></span></label>
     <div class="navlinks">
-      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a><a href="about.html">About</a>
+      <a href="concert.html">Concert &amp; Opera</a><a href="cabaret.html">Cabaret</a><a href="archive.html">The Archive</a>
     </div>
   </div>
   <main id="pagebody">
@@ -123,157 +142,153 @@
 
   <div style="padding: clamp(26px, 3vw, 40px) clamp(20px, 4.4vw, 64px); display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 48px); justify-content: space-between; align-items: center; border-bottom: 1px solid #1c1916">
     <div style="display: flex; flex-wrap: wrap; gap: 8px">
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #3CA6AD; color: #0d2b2c; background: #3CA6AD">All</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">Opera</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">Concert</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">Chorus</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">Theatre</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">Cabaret</span>
+      <button type="button" class="chip" data-cat="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-cat="opera" aria-pressed="false">Opera</button>
+      <button type="button" class="chip" data-cat="concert" aria-pressed="false">Concert</button>
+      <button type="button" class="chip" data-cat="chorus" aria-pressed="false">Chorus</button>
+      <button type="button" class="chip" data-cat="theatre" aria-pressed="false">Theatre</button>
+      <button type="button" class="chip" data-cat="cabaret" aria-pressed="false">Cabaret</button>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px">
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">1990s</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">2000s</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">2010s</span>
-      <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.8vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; padding: 8px 14px; border: 1px solid #302a23; color: #8c8377; background: transparent">2020s</span>
-    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px" id="decade-filters"></div>
   </div>
 
   <div style="padding: clamp(30px, 3.4vw, 44px) clamp(20px, 4.4vw, 64px) clamp(48px, 5vw, 72px); display: flex; flex-direction: column">
-    <div class="entry-head" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: 12px 0; border-bottom: 1px solid #302a23; font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.75vw, 10px); letter-spacing: 0.2em; text-transform: uppercase; color: #6f665a">
+    <div class="entry-head" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: 12px 0; border-bottom: 1px solid #302a23; font-family: 'IBM Plex Mono', monospace; font-size: clamp(9px, 0.75vw, 10px); letter-spacing: 0.2em; text-transform: uppercase; color: #8c8377">
       <span>Year</span><span>Work</span><span>Role</span><span>Company · Venue</span><span>Media</span>
     </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2019" data-cats="chorus concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2019</span>
         <span>Opening Gala</span>
         <span style="color: #8c8377">Chorus</span>
         <span style="color: #8c8377">San Francisco Symphony · Davies Symphony Hall</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Photo</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2019" data-cats="cabaret" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2019</span>
         <span>Trip the Light Fantastic</span>
         <span style="color: #8c8377">Golden Follies</span>
         <span style="color: #8c8377">The Firehouse · Pleasanton</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Video</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2016" data-cats="cabaret" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2016</span>
         <span>Hubba Hubba Revue</span>
         <span style="color: #8c8377">Wiggy Darlington</span>
         <span style="color: #8c8377">DNA Lounge · San Francisco</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Video</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2014" data-cats="cabaret" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2014</span>
         <span>The Edwardian Ball</span>
         <span style="color: #8c8377">Wiggy Darlington</span>
         <span style="color: #8c8377">Regency Ballroom · San Francisco</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Video</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2011" data-cats="cabaret" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2011</span>
         <span>Barbary Coast Burlesque</span>
         <span style="color: #8c8377">Wiggy Darlington</span>
         <span style="color: #8c8377">Bimbo’s 365 Club · San Francisco</span>
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a443c">—</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8377">—</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2008" data-cats="theatre concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2008</span>
         <span>Follies</span>
         <span style="color: #8c8377">“Losing My Mind”</span>
         <span style="color: #8c8377">Oakland East Bay Symphony · Paramount Theatre</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Press</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2007" data-cats="concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2007</span>
         <span>Girlkulture</span>
         <span style="color: #8c8377">Vocalist</span>
         <span style="color: #8c8377">Legion of Honor · Gunn Theater</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Press</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2006" data-cats="opera" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2006</span>
         <span>Our Town</span>
         <span style="color: #8c8377">Mrs. Soames</span>
         <span style="color: #8c8377">Festival Opera · Lesher Center</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Press</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2004" data-cats="opera" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2004</span>
         <span>Suor Juana</span>
         <span style="color: #8c8377">Soloist</span>
         <span style="color: #8c8377">SomArts Festival · San Francisco</span>
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a443c">—</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8377">—</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="2001" data-cats="theatre" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">2001</span>
         <span>Jane Eyre</span>
         <span style="color: #8c8377">Madwoman in the Attic</span>
         <span style="color: #8c8377">TheatreWorks · Mountain View</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Press</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1999" data-cats="theatre" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1999</span>
         <span>A Virtual Show</span>
         <span style="color: #8c8377">Performer</span>
         <span style="color: #8c8377">George Coates Performance Works · San Francisco</span>
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a443c">—</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8377">—</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1998" data-cats="concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1998</span>
         <span>Flurry Tales</span>
         <span style="color: #8c8377">Soloist</span>
         <span style="color: #8c8377">Rusty Magee · Lincoln Center</span>
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a443c">—</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8377">—</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1996" data-cats="opera concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1996</span>
         <span>Le Rossignol</span>
         <span style="color: #8c8377">Alto Soloist · Courtesan</span>
         <span style="color: #8c8377">San Francisco Symphony · Davies Symphony Hall</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Press</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1994" data-cats="chorus concert" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1994</span>
         <span>Carmina Burana</span>
         <span style="color: #8c8377">Chorus · cond. Kurt Masur</span>
         <span style="color: #8c8377">New York Philharmonic · Avery Fisher Hall</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Audio</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1993" data-cats="opera" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1993</span>
         <span>Carmen</span>
         <span style="color: #8c8377">Manuelita</span>
         <span style="color: #8c8377">San Francisco Opera · War Memorial Opera House</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Photo</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1992" data-cats="opera chorus" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1992</span>
         <span>Turandot</span>
         <span style="color: #8c8377">Chorus</span>
         <span style="color: #8c8377">San Francisco Opera · War Memorial Opera House</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Photo</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1991" data-cats="opera chorus" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1991</span>
         <span>Samson and Delilah</span>
         <span style="color: #8c8377">Chorus</span>
         <span style="color: #8c8377">San Francisco Opera · War Memorial Opera House</span>
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a26a">Photo</span>
       </div>
-      <div class="entry" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
+      <div class="entry" data-year="1990" data-cats="theatre" style="display: grid; grid-template-columns: clamp(52px, 5vw, 70px) minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1.1fr) clamp(56px, 6vw, 80px); gap: clamp(10px, 1.4vw, 20px); padding: clamp(14px, 1.4vw, 18px) 0; border-bottom: 1px solid #1c1916; align-items: baseline; font-size: clamp(15px, 1.25vw, 19px); color: #ece5da">
         <span style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(11px, 0.9vw, 12px); color: #c9a26a">1990</span>
         <span>Iolanthe</span>
         <span style="color: #8c8377">title role</span>
         <span style="color: #8c8377">Lamplighters Music Theatre · San Francisco</span>
-        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a443c">—</span>
+        <span style="font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8c8377">—</span>
       </div>
-    <div style="padding: clamp(24px, 2.6vw, 34px) 0 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; color: #3CA6AD">Show all 214 entries →</div>
+    <div id="archive-empty" style="padding: clamp(28px, 3vw, 40px) 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; color: #8c8377">No engagements match that combination.</div>
+    <div style="padding: clamp(24px, 2.6vw, 34px) 0 0; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 0.85vw, 11px); letter-spacing: 0.16em; text-transform: uppercase; color: #3CA6AD"><span id="entry-count"></span></div>
   </div>
 
   <div style="padding: clamp(48px, 5.4vw, 76px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-direction: column; gap: clamp(18px, 2vw, 26px)">
     <div style="display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #302a23; padding-bottom: 12px">
-      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Contact sheet · 216 photographs</div>
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.22em; text-transform: uppercase; color: #7a6f5e">Contact sheet · <span id="photo-count"></span></div>
       <div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(9.5px, 0.85vw, 10.5px); letter-spacing: 0.14em; text-transform: uppercase; color: #3CA6AD">Browse by decade</div>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr)); gap: clamp(10px, 1.2vw, 14px)">
@@ -290,14 +305,108 @@
       <img src="images/cabaret-03.jpg" alt="" style="width: 100%; height: clamp(110px, 11vw, 150px); object-fit: cover; filter: grayscale(0.45) brightness(0.85)">
       <img src="images/girlkulture-legion-of-honor.jpg" alt="" style="width: 100%; height: clamp(110px, 11vw, 150px); object-fit: cover; filter: grayscale(0.45) brightness(0.85)">
     </div>
-    <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; line-height: 1.9; letter-spacing: 0.04em; color: #6f665a; max-width: 60em">Every frame carries production, company, venue, year and photographer credit — the difference between a gallery and an archive.</p>
-  </div>
-  <div style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px 28px; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6f665a">
-    <a href="#top" style="color: #3CA6AD">↑ Back to top</a>
-    <span style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="about.html">Booking</a><a href="https://www.linkedin.com/in/dwigginton/">LinkedIn</a><a href="http://www.sfpowerplay.com" style="color: #8c8377">Design work → sfpowerplay.com</a></span>
+    <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; line-height: 1.9; letter-spacing: 0.04em; color: #8c8377; max-width: 60em">Every frame carries production, company, venue, year and photographer credit — the difference between a gallery and an archive.</p>
   </div>
   </main>
+  <footer style="padding: clamp(28px, 3vw, 40px) clamp(20px, 4.4vw, 64px); border-top: 1px solid #1c1916; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8c8377">©2026 Darla Wigginton</footer>
 </div>
+<script>
+/* Archive filters.
+   Category and decade are independent and combine with AND. Decade chips are
+   generated from the rows themselves, so a decade with no engagements never
+   appears and the list stays correct as rows are added. Every count on the
+   page is derived here rather than hardcoded. */
+(function(){
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.entry'));
+  if (!rows.length) return;
+
+  var catWrap    = document.querySelector('[data-cat="all"]') &&
+                   document.querySelector('[data-cat="all"]').parentNode;
+  var decadeWrap = document.getElementById('decade-filters');
+  var countEl    = document.getElementById('entry-count');
+  var emptyEl    = document.getElementById('archive-empty');
+  var photoEl    = document.getElementById('photo-count');
+
+  var state = { cat: 'all', decade: 'all' };
+
+  function decadeOf(row) {
+    var y = parseInt(row.getAttribute('data-year'), 10);
+    return isNaN(y) ? null : (Math.floor(y / 10) * 10) + 's';
+  }
+
+  // ---- build decade chips from the data, newest first ----
+  var decades = [];
+  rows.forEach(function(r){
+    var d = decadeOf(r);
+    if (d && decades.indexOf(d) === -1) decades.push(d);
+  });
+  decades.sort().reverse();
+
+  if (decadeWrap) {
+    var all = document.createElement('button');
+    all.type = 'button'; all.className = 'chip';
+    all.setAttribute('data-decade', 'all');
+    all.setAttribute('aria-pressed', 'true');
+    all.textContent = 'All years';
+    decadeWrap.appendChild(all);
+    decades.forEach(function(d){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'chip';
+      b.setAttribute('data-decade', d);
+      b.setAttribute('aria-pressed', 'false');
+      b.textContent = d;
+      decadeWrap.appendChild(b);
+    });
+  }
+
+  function apply() {
+    var shown = 0;
+    rows.forEach(function(r){
+      var cats = (r.getAttribute('data-cats') || '').split(/\s+/);
+      var okCat = state.cat === 'all' || cats.indexOf(state.cat) !== -1;
+      var okDec = state.decade === 'all' || decadeOf(r) === state.decade;
+      var show  = okCat && okDec;
+      r.hidden = !show;
+      if (show) shown++;
+    });
+
+    if (countEl) {
+      countEl.textContent = shown === rows.length
+        ? 'Showing all ' + rows.length + ' entries'
+        : 'Showing ' + shown + ' of ' + rows.length + ' entries';
+    }
+    if (emptyEl) {
+      if (shown === 0) emptyEl.setAttribute('data-shown', '');
+      else emptyEl.removeAttribute('data-shown');
+    }
+    var head = document.querySelector('.entry-head');
+    if (head) head.hidden = (shown === 0);
+  }
+
+  function bind(wrap, key) {
+    if (!wrap) return;
+    wrap.addEventListener('click', function(e){
+      var btn = e.target.closest('[data-' + key + ']');
+      if (!btn || !wrap.contains(btn)) return;
+      state[key] = btn.getAttribute('data-' + key);
+      Array.prototype.forEach.call(wrap.querySelectorAll('[data-' + key + ']'), function(b){
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      apply();
+    });
+  }
+  bind(catWrap, 'cat');
+  bind(decadeWrap, 'decade');
+
+  // photo count on the contact sheet, derived from the images actually present
+  if (photoEl) {
+    var n = document.querySelectorAll('img[src^="images/"]').length;
+    photoEl.textContent = n + (n === 1 ? ' photograph' : ' photographs');
+  }
+
+  apply();
+})();
+</script>
 <script>
 (function(){
   var main = document.getElementById('pagebody');
@@ -344,7 +453,7 @@
   });
   window.addEventListener('popstate', function(){ go(here(), false); });
   markActive();
-  ['index.html','concert.html','cabaret.html','archive.html','about.html'].forEach(function(h){
+  ['index.html','concert.html','cabaret.html','archive.html'].forEach(function(h){
     if(h === here()) return;
     fetch(h).then(function(r){ return r.text(); }).then(function(t){ cache[h] = t; }).catch(function(){});
   });

@@ -7,3 +7,11 @@ Thumbs.db
 # Claude Design export scaffolding
 support.js
 .thumbnail
+
+# Local QA scratch, not part of the site
+contact-sheet.html
+
+# Local dev server config
+.claude/
+pageaudit.js
+gallery-options.html

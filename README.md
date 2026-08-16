@@ -8,7 +8,7 @@ Darla Wigginton website — static HTML site.
 index.html            Home — bio, press quote, The work
 concert.html          Concert & Opera
 cabaret.html          Cabaret
-archive.html          Performance history
+archive.html          Performance History
 home-original.html    Parked: the previous home page, unlinked
 fonts/                Didot HTF (regular, bold)
 uploads/              Acid Grotesk (regular, bold), logo SVG
@@ -19,7 +19,7 @@ Each page is self-contained: styles live in an inline `<style>` block, so there 
 build step and no CSS bundle to keep in sync. Edit the HTML directly.
 
 There is no About page. Its content is the home page — reachable via the logo. The nav
-is Concert & Opera / Cabaret / Performance history.
+is Concert & Opera / Cabaret / Performance History.
 
 The file is still named `archive.html`; only the label changed.
 
